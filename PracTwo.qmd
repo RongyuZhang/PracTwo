@@ -1,11 +1,131 @@
 ---
 title: "PracTwo"
+format: html
 ---
 
 ## Quarto
 
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
+## Question 1
+
 ```{r}
-1 + 1
+library(foreach)
+
+result <- foreach(i = 1:100, .combine = rbind) %do% {
+    s <- rexp(100, 1)
+    m <- mean(s)
+    v <- var(s)
+    c(meam = m,variance = v)
+}
+result
+```
+
+## Question 2
+
+```{r}
+library(boot)
+library(doParallel)
+library(MASS)
+library(parallel)
+d2 <- galaxies
+
+
+## normal
+tboot1 <- numeric(1000)
+
+system.time({
+  for (i in 1:1000){
+  tboot1[i] <- median(sample(d2, replace = TRUE))
+  }
+})
+
+## foreach doParellel
+c1 <- makeCluster(3)
+clusterExport(c1, "d2")
+registerDoParallel(c1)
+
+system.time({
+tboot2 <- foreach(i = 1:1000, .combine = c) %dopar% {
+  median(sample(d2, replace = TRUE))
+}
+})
+
+
+## large sample
+
+system.time({
+tboot3 <- foreach(i = 1:10000, .combine = c) %dopar% {
+  median(sample(d2, replace = TRUE))
+}
+})
+stopCluster(c1)
+```
+
+## Question 3
+
+```{r}
+
+coverage_count <- 0
+mb3 <- numeric(1000)
+for (i in 1:1000) {
+
+    s <- rexp(50, 1)
+    for (i in 1:1000){
+    b3 <- sample(s, replace = TRUE)
+    mb3[i] <- mean(b3)
+    }
+    ci <- quantile(mb3, c(0.025, 0.975))
+
+    if (ci[1] <= 1 && 1 <= ci[2]) {
+      coverage_count <- coverage_count + 1
+    }
+  }
+
+  coverage_probability <- coverage_count / 1000
+
+coverage_probability
+```
+
+## Question 4
+
+```{r}
+it <- irnorm(5)
+
+set.seed(1234)
+largest <- foreach(i = 1:3, .combine = cbind) %do% {
+  v = nextElem(it)
+  max(v)
+}
+
+largest
+```
+
+## Question 5
+
+```{r}
+it <- irnorm(5)
+
+c5 <- makeCluster(3)
+clusterExport(c5, "max")
+set.seed(1234)
+vl <- list(nextElem(it), nextElem(it), nextElem(it))
+system.time({
+parLapply(c5,vl, max)
+})
+
+set.seed(1234)
+system.time({
+largest <- foreach(i = 1:3, .combine = cbind) %do% {
+  v = nextElem(it)
+  max(v)
+}
+})
+
+set.seed(1234)
+system.time({
+replicate(3, max(v = nextElem(it)))
+})
+
+stopCluster(c5)
 ```

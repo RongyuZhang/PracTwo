@@ -1,0 +1,82 @@
+[
+  {
+    "objectID": "PracTwo.html",
+    "href": "PracTwo.html",
+    "title": "2  PracTwo",
+    "section": "",
+    "text": "2.1 Quarto\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>PracTwo</span>"
+    ]
+  },
+  {
+    "objectID": "PracTwo.html#question-1",
+    "href": "PracTwo.html#question-1",
+    "title": "2  PracTwo",
+    "section": "2.2 Question 1",
+    "text": "2.2 Question 1\n\nlibrary(foreach)\n\nresult &lt;- foreach(i = 1:100, .combine = rbind) %do% {\n    s &lt;- rexp(100, 1)\n    m &lt;- mean(s)\n    v &lt;- var(s)\n    c(meam = m,variance = v)\n}\nresult\n\n                meam  variance\nresult.1   1.1048889 0.9700275\nresult.2   1.1002096 1.5495650\nresult.3   1.0239693 1.3147797\nresult.4   0.9259898 0.9387998\nresult.5   0.8889093 0.9126686\nresult.6   1.0335137 1.2982077\nresult.7   0.9928839 0.8477348\nresult.8   1.1457038 1.1786526\nresult.9   0.9628423 0.9088804\nresult.10  1.1156738 0.9408874\nresult.11  1.0181630 1.1212705\nresult.12  0.9355421 1.2666354\nresult.13  1.0038530 1.2870128\nresult.14  1.1801732 1.9665398\nresult.15  1.0849242 1.2281615\nresult.16  1.1218270 1.4132254\nresult.17  0.9048642 1.1171464\nresult.18  1.0801175 1.0097263\nresult.19  0.9366150 0.7290197\nresult.20  1.0115343 0.7930169\nresult.21  1.1537229 1.1716804\nresult.22  1.0327821 0.9125529\nresult.23  1.0645130 1.3596946\nresult.24  1.1692311 1.3836211\nresult.25  0.9845736 0.9372804\nresult.26  0.9751452 0.8342687\nresult.27  0.7693913 0.5503097\nresult.28  0.9996203 0.9230340\nresult.29  1.0550665 0.8862573\nresult.30  0.8347983 0.8844426\nresult.31  0.8746710 0.8560622\nresult.32  0.9121499 0.6251052\nresult.33  1.0836687 1.2808488\nresult.34  1.0278184 0.9228896\nresult.35  0.9186736 0.8142730\nresult.36  1.1743366 1.0236082\nresult.37  0.9656970 0.9809783\nresult.38  0.9846932 1.0659207\nresult.39  0.8949351 0.8814297\nresult.40  0.9698023 1.1930763\nresult.41  1.1005764 0.9931484\nresult.42  0.9421363 0.6081107\nresult.43  1.0762308 1.0410507\nresult.44  1.0029379 0.7881425\nresult.45  1.1735272 1.3472476\nresult.46  1.1817066 1.0184191\nresult.47  0.8616892 0.7441133\nresult.48  1.0064847 1.1341266\nresult.49  0.9330580 0.8101141\nresult.50  1.0669479 0.8342125\nresult.51  1.0167991 1.1447272\nresult.52  0.9551806 0.9455033\nresult.53  1.0040170 0.6933591\nresult.54  1.0291525 1.0317553\nresult.55  1.0200626 0.9663573\nresult.56  1.0126739 1.0925006\nresult.57  1.1211280 1.6865771\nresult.58  1.1007891 1.3053462\nresult.59  1.1196730 0.9883196\nresult.60  1.0042388 1.1665061\nresult.61  0.7903184 0.4740322\nresult.62  1.0374532 1.0239521\nresult.63  1.0526329 1.4048587\nresult.64  1.0529737 1.6402069\nresult.65  0.8563848 0.7051935\nresult.66  0.9856874 0.8729738\nresult.67  0.9543843 0.7301395\nresult.68  0.9112453 0.6220596\nresult.69  1.0166823 0.8977900\nresult.70  1.0007663 0.7595264\nresult.71  1.0259174 1.1318090\nresult.72  1.0283942 1.0574303\nresult.73  0.9827290 0.9971260\nresult.74  1.0423644 0.9119904\nresult.75  1.1833605 1.9033557\nresult.76  0.9991411 1.0151163\nresult.77  0.9881220 0.8211309\nresult.78  0.9940241 1.1558838\nresult.79  0.9384986 0.6436927\nresult.80  0.9809303 0.7494413\nresult.81  0.9016589 0.9016168\nresult.82  1.2823920 1.6830503\nresult.83  1.1679490 1.1213218\nresult.84  1.0711562 1.1169432\nresult.85  1.0933353 1.2215737\nresult.86  0.9540270 0.7687043\nresult.87  0.7886226 0.5343762\nresult.88  1.0669550 1.2617215\nresult.89  0.9555048 1.0482286\nresult.90  1.1237485 1.5519223\nresult.91  0.9746040 1.0037649\nresult.92  1.1592434 1.8502060\nresult.93  1.0859875 1.2346071\nresult.94  0.9182897 0.8677363\nresult.95  1.0214372 0.9299525\nresult.96  0.9882021 0.9613646\nresult.97  1.0113148 0.6988557\nresult.98  0.9375967 0.8902542\nresult.99  1.0789584 1.0576698\nresult.100 0.8741579 0.8050182",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>PracTwo</span>"
+    ]
+  },
+  {
+    "objectID": "PracTwo.html#question-2",
+    "href": "PracTwo.html#question-2",
+    "title": "2  PracTwo",
+    "section": "2.3 Question 2",
+    "text": "2.3 Question 2\n\nlibrary(boot)\nlibrary(doParallel)\n\nLoading required package: iterators\n\n\nLoading required package: parallel\n\nlibrary(MASS)\nlibrary(parallel)\nd2 &lt;- galaxies\n\n\n## normal\ntboot1 &lt;- numeric(1000)\n\nsystem.time({\n  for (i in 1:1000){\n  tboot1[i] &lt;- median(sample(d2, replace = TRUE))\n  }\n})\n\n   user  system elapsed \n   0.06    0.00    0.05 \n\n## foreach doParellel\nc1 &lt;- makeCluster(3)\nclusterExport(c1, \"d2\")\nregisterDoParallel(c1)\n\nsystem.time({\ntboot2 &lt;- foreach(i = 1:1000, .combine = c) %dopar% {\n  median(sample(d2, replace = TRUE))\n}\n})\n\n   user  system elapsed \n   0.28    0.00    0.28 \n\n## large sample\n\nsystem.time({\ntboot3 &lt;- foreach(i = 1:10000, .combine = c) %dopar% {\n  median(sample(d2, replace = TRUE))\n}\n})\n\n   user  system elapsed \n   1.96    0.65    2.58 \n\nstopCluster(c1)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>PracTwo</span>"
+    ]
+  },
+  {
+    "objectID": "PracTwo.html#question-3",
+    "href": "PracTwo.html#question-3",
+    "title": "2  PracTwo",
+    "section": "2.4 Question 3",
+    "text": "2.4 Question 3\n\ncoverage_count &lt;- 0\nmb3 &lt;- numeric(1000)\nfor (i in 1:1000) {\n\n    s &lt;- rexp(50, 1)\n    for (i in 1:1000){\n    b3 &lt;- sample(s, replace = TRUE)\n    mb3[i] &lt;- mean(b3)\n    }\n    ci &lt;- quantile(mb3, c(0.025, 0.975))\n\n    if (ci[1] &lt;= 1 && 1 &lt;= ci[2]) {\n      coverage_count &lt;- coverage_count + 1\n    }\n  }\n\n  coverage_probability &lt;- coverage_count / 1000\n\ncoverage_probability\n\n[1] 0.938",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>PracTwo</span>"
+    ]
+  },
+  {
+    "objectID": "PracTwo.html#question-4",
+    "href": "PracTwo.html#question-4",
+    "title": "2  PracTwo",
+    "section": "2.5 Question 4",
+    "text": "2.5 Question 4\n\nit &lt;- irnorm(5)\n\nset.seed(1234)\nlargest &lt;- foreach(i = 1:3, .combine = cbind) %do% {\n  v = nextElem(it)\n  max(v)\n}\n\nlargest\n\n     result.1  result.2  result.3\n[1,] 1.084441 0.5060559 0.9594941",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>PracTwo</span>"
+    ]
+  },
+  {
+    "objectID": "PracTwo.html#question-5",
+    "href": "PracTwo.html#question-5",
+    "title": "2  PracTwo",
+    "section": "2.6 Question 5",
+    "text": "2.6 Question 5\n\nit &lt;- irnorm(5)\n\nc5 &lt;- makeCluster(3)\nclusterExport(c5, \"max\")\nset.seed(1234)\nvl &lt;- list(nextElem(it), nextElem(it), nextElem(it))\nsystem.time({\nparLapply(c5,vl, max)\n})\n\n   user  system elapsed \n   0.01    0.00    0.00 \n\nset.seed(1234)\nsystem.time({\nlargest &lt;- foreach(i = 1:3, .combine = cbind) %do% {\n  v = nextElem(it)\n  max(v)\n}\n})\n\n   user  system elapsed \n      0       0       0 \n\nset.seed(1234)\nsystem.time({\nreplicate(3, max(v = nextElem(it)))\n})\n\n   user  system elapsed \n      0       0       0 \n\nstopCluster(c5)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>PracTwo</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "index",
+    "section": "",
+    "text": "0.1 Quarto\n## Below is my link for github\n# https://github.com/RongyuZhang/PracOne\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#running-code",
+    "href": "index.html#running-code",
+    "title": "index",
+    "section": "0.2 Running Code",
+    "text": "0.2 Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index</span>"
+    ]
+  }
+]

@@ -1,5 +1,30 @@
 project:
-  title: "PracTwo"
+  type: book
+  title: Statistical Computing
+  output-dir: _site
+  
 
-editor: visual
+website: 
+  navbar: 
+    left: 
+      - href: index.qmd
+        text: Home
+      - href: PracTwo.qmd
+        text: Second Page
+
+        
+        
+book: 
+  chapters: 
+    - index.qmd
+    - PracTwo.qmd
+
+
+format: 
+  html: 
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    theme: cosmo
+
 
